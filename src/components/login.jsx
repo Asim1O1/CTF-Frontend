@@ -22,26 +22,18 @@ const UserLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post("", formData);
 
-      const data = await response.json();
-
-      if (response.ok) {
+      if (response.status === 200) {
         setSuccess("Login successful");
         setError("");
         // Handle successful login
-        console.log("Login successful", data);
+        console.log("Login successful", response.data);
       } else {
         setSuccess("");
-        setError(data.message || "Login failed");
+        setError("Login failed");
         // Handle login failure
-        console.error("Login failed", data);
+        console.error("Login failed", response.data);
       }
     } catch (error) {
       setSuccess("");
@@ -49,70 +41,74 @@ const UserLogin = () => {
       console.error("An error occurred", error);
     }
   };
+
   return (
     <>
-      {/* <div className="flex justify-center items-center">
-          <img
-            src={logo}
-            alt="Logo"
-            className="w-20 h-30 object-cover"
-          />
-        </div> */}
-      <div className="max-w-md w-full space-y-8 p-8 bg-black rounded-lg shadow-lg">
-        <div>
-          <h2 className="text-3xl font-extrabold text-center text-red-600">
-            Login
-          </h2>
-        </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div>
-            <p className="text-left text-white">Email:</p>
-            <label htmlFor="email-address" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="email-address"
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              className="appearance-none  relative block rounded-md w-full px-3 py-2 border-3 border-gray-300  text-gray-900  "
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <p className="text-left text-white">Password:</p>
-            <label htmlFor="password" className="sr-only">
-              Password
-            </label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              autoComplete="current-password"
-              required
-              className="appearance-none rounded-md relative block w-full px-3 py-2 border-30 "
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <button
-              type="submit"
-              className="w-full py-2 px-4 border border-transparent  font-medium rounded-md text-white bg-red-600 hover:bg-black "
-            >
-              Login
-            </button>
-            <p className="text-white font-bold">
-              Don't have an account?{" "}
-              <span className="text-red-600 cursor-pointer">Register</span>
-            </p>
-            {error && <p className="text-red-600">{error}</p>}
-            {success && <p className="text-green-600">{success}</p>}
-          </div>
-        </form>
+    <div className="flex">
+  <div className="w-1/2">
+    <img
+      src={logo}
+      alt="Guy Fawkes Mask"
+      className="w-full h-full object-cover rounded-lg ml-30"
+    />
+  </div>
+  <div className="w-1/2 flex flex-col justify-center p-4">
+    <div>
+      <h2 className="text-4xl font-extrabold text-left text-red-600">
+        Login
+      </h2>
+    </div>
+    <form className="-90 mb-4 mt-8 space-y-6" onSubmit={handleSubmit}>
+      <div>
+        <p className="text-left text-white">Email:</p>
+        <label htmlFor="email-address" className="sr-only">
+          Email address
+        </label>
+        <input
+          id="email-address"
+          name="email"
+          type="email"
+          autoComplete="email"
+          required
+          className="appearance-none relative block w-64 h-8 px-3 py-2 border-3 border-gray-300 text-gray-900"
+          value={formData.email}
+          onChange={handleChange}
+        />
       </div>
+      <div>
+        <p className="text-left text-white">Password:</p>
+        <label htmlFor="password" className="sr-only">
+          Password
+        </label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autoComplete="current-password"
+          required
+          className="appearance-none rounded-md relative block w-64 h-8 px-3 py-2 border-30"
+          value={formData.password}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="flex justify-start">
+        <button
+          type="submit"
+          className="py-2 px-4 border border-transparent font-medium rounded-md text-white bg-red-600 hover:bg-black"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+      <p className="text-white font-bold ml-40">
+                Don't have an account?{" "}
+                <span className="text-red-600 cursor-pointer">Register</span>
+              </p>
+              {error && <p className="text-red-600">{error}</p>}
+              {success && <p className="text-green-600">{success}</p>}
     </>
   );
 };
