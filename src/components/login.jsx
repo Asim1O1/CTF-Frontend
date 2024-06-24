@@ -21,13 +21,14 @@ const UserLogin = () => {
       [name]: value,
     }));
   };
+  const apiUrl = "http://localhost:5300";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const response = await axios.post(
-        "http://localhost:5300/api/users/login",
+        `${apiUrl}/api/users/login`,
         formData
       );
 

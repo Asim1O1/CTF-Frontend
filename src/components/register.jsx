@@ -36,8 +36,10 @@ const UserRegister = () => {
         setError("Please fill in all fields.");
         return;
       }
+
+      const apiUrl = "http://localhost:5300";
       const response = await axios.post(
-        "http://localhost:5300/api/users/register",
+        `${apiUrl}/api/users/register`,
         formData
       );
 
