@@ -4,6 +4,7 @@ import logo from "../assets/hackerimage.jpg";
 import { useNavigate, Link } from "react-router-dom";
 
 const UserLogin = () => {
+  const apiUrl = "http://localhost:5300";
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -21,7 +22,7 @@ const UserLogin = () => {
       [name]: value,
     }));
   };
-  const apiUrl = "http://localhost:5300";
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
