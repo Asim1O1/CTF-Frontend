@@ -1,13 +1,13 @@
 
-import UserLogin from './components/login'
 import './App.css'
+import UserRegister from './components/register'
 
 function App() {
 
 
   return (
     <>
-      <UserLogin/>
+
     </>
   )
 }
