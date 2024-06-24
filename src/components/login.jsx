@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import logo from "../assets/hackerimage.jpg";
+import { useNavigate, Link } from "react-router-dom";
 
 const UserLogin = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
+
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
@@ -22,13 +26,18 @@ const UserLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("", formData);
+      const response = await axios.post(
+        "http://localhost:5300/api/users/login",
+        formData
+      );
 
       if (response.status === 200) {
+        console.log("Login successful", response.data);
         setSuccess("Login successful");
         setError("");
-        // Handle successful login
-        console.log("Login successful", response.data);
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
       } else {
         setSuccess("");
         setError("Login failed");
@@ -100,8 +109,10 @@ const UserLogin = () => {
               </button>
             </div>
             <p className="text-white font-bold mr-80">
-              Don't have an account?{" "}
-              <span className="text-red-600 cursor-pointer">Register</span>
+              Dont have an account?{" "}
+              <span className="text-red-600 cursor-pointer">
+                <Link to="/register"> Register</Link>
+              </span>
             </p>
             {error && <p className="text-red-600">{error}</p>}
             {success && <p className="text-green-600">{success}</p>}

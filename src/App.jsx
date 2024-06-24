@@ -1,23 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import UserRegister from './components/register'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UserLogin from "./components/login";
+import UserRegister from "./components/register";
+import Home from "./pages/HomePage";
 
 function App() {
-
-
   return (
     <>
-<<<<<<<<< Temporary merge branch 1
-      <UserLogin/>
-=========
-      <UserRegister>
-
-      </UserRegister>
->>>>>>>>> Temporary merge branch 2
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<UserRegister />} />
+          <Route path="/login" element={<UserLogin />} />
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

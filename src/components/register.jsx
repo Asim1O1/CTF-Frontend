@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import logo from "../assets/1000014770 (2).jpg";
+import { useNavigate, Link } from "react-router-dom";
 
 const UserRegister = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
+    fullname: "",
     username: "",
     email: "",
     password: "",
   });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,15 +24,32 @@ const UserRegister = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Form Data:", formData);
 
     try {
-      const response = await axios.post("http://10.50.0.212:5300/api/users/register", formData);
+      if (
+        !formData.fullname ||
+        !formData.username ||
+        !formData.email ||
+        !formData.password
+      ) {
+        setError("Please fill in all fields.");
+        return;
+      }
+      const response = await axios.post(
+        "http://localhost:5300/api/users/register",
+        formData
+      );
 
       if (response.status === 200) {
-        setSuccess("Registration successful");
         setError("");
         // Handle successful registration
+        setSuccess("Registration successful");
         console.log("Registration successful", response.data);
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000);
+
       } else {
         setSuccess("");
         setError("Registration failed");
@@ -68,12 +87,12 @@ const UserRegister = () => {
               </label>
               <input
                 id="full-name"
-                name="fullName"
+                name="fullname"
                 type="text"
                 autoComplete="name"
                 required
                 className="bg-white appearance-none relative block w-full h-8 px-3 py-2 border-3 border-gray-300 text-gray-900 "
-                value={formData.fullName}
+                value={formData.fullname}
                 onChange={handleChange}
               />
             </div>
@@ -135,7 +154,10 @@ const UserRegister = () => {
             </div>
             <p className="text-white font-bold text-left">
               Already have an account?{" "}
-              <span className="text-red-600 cursor-pointer">Login</span>
+              <span className="text-red-600 cursor-pointer">
+                {" "}
+                <Link to="/login">Login</Link>
+              </span>
             </p>
             {error && <p className="text-red-600">{error}</p>}
             {success && <p className="text-green-600">{success}</p>}
