@@ -1,6 +1,6 @@
 import react from 'react'
 import './App.css'
-import img from '../assets/img.png';
+// import img from '../assets/img.png';
 import  Quiz from "./components/ctfdetail.jsx"
 import UserRegister from './components/register'
 
