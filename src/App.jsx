@@ -15,6 +15,7 @@ function App() {
     <>
       <NavBar />
       <Hero/>
+      <Analytics/>
       <Footer/>
     </>
     </ErrorBoundary>
