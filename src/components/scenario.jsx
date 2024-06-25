@@ -24,7 +24,7 @@ const Scenario = () => {
         Access WhatsApp Web
       </button>
       <button
-        onClick={() => navigate(`/process/${id}`)}
+        onClick={() => navigate("/Ctfdetail")}
         className="mt-5 ml-9 px-6 py-3 bg-purple-500 text-white rounded"
       >
         Let's Play
