@@ -72,7 +72,7 @@ const UserRegister = () => {
                 type="text"
                 autoComplete="name"
                 required
-                className="bg-white appearance-none relative block w-full h-8 px-3 py-2 border-3 border-gray-300 text-gray-900 "
+                className="bg-white appearance-none rounded-md relative block w-full h-9 px-3 py-2 border-3 border-gray-300 text-gray-900 "
                 value={formData.fullName}
                 onChange={handleChange}
               />
@@ -88,7 +88,7 @@ const UserRegister = () => {
                 type="text"
                 autoComplete="username"
                 required
-                className="bg-white appearance-none relative block w-full h-8 px-3 py-2 border-3 border-gray-300 text-gray-900"
+                className="bg-white appearance-none rounded-md relative block w-full h-9 px-3 py-2 border-3 border-gray-300 text-gray-900"
                 value={formData.username}
                 onChange={handleChange}
               />
@@ -104,7 +104,7 @@ const UserRegister = () => {
                 type="email"
                 autoComplete="email"
                 required
-                className="bg-white appearance-none relative block w-full h-8 px-3 py-2 border-3 border-gray-300 text-gray-900"
+                className="bg-white appearance-none rounded-md relative block w-full h-9 px-3 py-2 border-3 border-gray-300 text-gray-900 "
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -120,7 +120,7 @@ const UserRegister = () => {
                 type="password"
                 autoComplete="current-password"
                 required
-                className="bg-white appearance-none rounded-md relative block w-full h-8 px-3 py-2 border-30 text-gray-900"
+                className="bg-white appearance-none rounded-md relative block w-full h-9 px-3 py-2 border-30 text-gray-900"
                 value={formData.password}
                 onChange={handleChange}
               />
@@ -128,7 +128,7 @@ const UserRegister = () => {
             <div className="flex">
               <button
                 type="submit"
-                className="w-full py-2 px-4 border border-transparent font-medium rounded-md text-white bg-red-600 hover:bg-red-800"
+                className="w-full py-2 px-4 mt-1 border border-transparent font-medium rounded-md text-white bg-red-600 hover:bg-red-800"
               >
                 Register
               </button>
