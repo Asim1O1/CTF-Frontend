@@ -353,6 +353,11 @@
   "resolved" "https://registry.npmjs.org/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.18.0.tgz"
   "version" "4.18.0"
 
+"@stencil/core@^4.0.3":
+  "integrity" "sha512-8yoG5AFQYEPocVtuoc5kvRS0Hku0MoDWDUpADRaXPVHsOFLmxR16LJENj25ucCz5GEfeTGQ/tCE8JAypPmr/fQ=="
+  "resolved" "https://registry.npmjs.org/@stencil/core/-/core-4.18.3.tgz"
+  "version" "4.18.3"
+
 "@tsparticles/all@^3.4.0":
   "integrity" "sha512-KcbRmf+1sdKmlsMWXZJJujtUtD92kxcXMHun63sBFdFkWo/7qRk4KXj36DA91/80dEmOvDkvlA2evz9MRvIjYg=="
   "resolved" "https://registry.npmjs.org/@tsparticles/all/-/all-3.4.0.tgz"
@@ -1593,9 +1598,9 @@
   "version" "0.2.0"
 
 "electron-to-chromium@^1.4.796":
-  "integrity" "sha512-Kaxhu4T7SJGpRQx99tq216gCq2nMxJo+uuT6uzz9l8TVN2stL7M06MIIXAtr9jsrLs2Glflgf2vMQRepxawOdQ=="
-  "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.810.tgz"
-  "version" "1.4.810"
+  "integrity" "sha512-CDyzcJ5XW78SHzsIOdn27z8J4ist8eaFLhdto2hSMSJQgsiwvbv2fbizcKUICryw1Wii1TI/FEkvzvJsR3awrA=="
+  "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.811.tgz"
+  "version" "1.4.811"
 
 "emoji-regex@^8.0.0":
   "integrity" "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A=="
@@ -2197,6 +2202,13 @@
     "es-errors" "^1.3.0"
     "hasown" "^2.0.0"
     "side-channel" "^1.0.4"
+
+"ionicons@^7.4.0":
+  "integrity" "sha512-ZK94MMqgzMCPPMhmk8Ouu6goyVHFIlw/ACP6oe3FrikcI0N7CX0xcwVaEbUc0G/v3W0shI93vo+9ve/KpvcNhQ=="
+  "resolved" "https://registry.npmjs.org/ionicons/-/ionicons-7.4.0.tgz"
+  "version" "7.4.0"
+  dependencies:
+    "@stencil/core" "^4.0.3"
 
 "is-array-buffer@^3.0.4":
   "integrity" "sha512-wcjaerHw0ydZwfhiKbXJWLDY8A7yV7KhjQOpb83hGgGfId/aQa4TOvwyzn2PuswW2gPCYEL/nEAiSVpdOj1lXw=="
