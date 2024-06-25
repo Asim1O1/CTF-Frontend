@@ -1,16 +1,19 @@
-import react from 'react'
-import './App.css'
-// import img from '../assets/img.png';
-import  Quiz from "./components/ctfdetail.jsx"
-import UserRegister from './components/register'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UserLogin from "./components/login";
+import UserRegister from "./components/register";
+import Home from "./pages/HomePage";
 
 function App() {
-
-
   return (
-    <div className="App p-6 min-h-screen">
-      <Quiz />
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<UserRegister />} />
+          <Route path="/login" element={<UserLogin />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
