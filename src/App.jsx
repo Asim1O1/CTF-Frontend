@@ -6,7 +6,6 @@ import react from 'react'
 import './App.css'
 // import img from '../assets/img.png';
 import  Quiz from "./components/ctfdetail.jsx"
-import UserRegister from './components/register'
 import CtfDetail from './components/newctfdetail.jsx'
 
 function App() {
@@ -17,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<UserRegister />} />
           <Route path="/login" element={<UserLogin />} />
+          <Route path="/CTFdetailpage" element={<CtfDetail />} />
         </Routes>
       </BrowserRouter>
     </>
