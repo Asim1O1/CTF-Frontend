@@ -12,10 +12,22 @@ import Ctfdetail from './components/ctfdetail.jsx'
 // src/App.jsx
 
 
+import './App.css'
+import UserRegister from './components/register'
+import Hero from './components/hero'
+
+
 
 function App() {
   return (
     <>
+
+     <Hero>
+
+      </Hero>
+      {/* <UserRegister>
+        
+      </UserRegister> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
