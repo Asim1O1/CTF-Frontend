@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import img from '../assets/img.png';
+import Header from './navbar';
 
 function Quiz() {
   const [answer1, setAnswer1] = useState('');
@@ -29,8 +30,9 @@ function Quiz() {
 
   return (
     <>
+    <Header></Header>
     <div>
-      <img 
+      <img
       src = {img}
       alt=""
       className='container' />
@@ -38,7 +40,7 @@ function Quiz() {
       <div className='flex items-center bg-white'>
         <div className='text-left '>
           <ul>
-            <h1 className=''>Process to perform:</h1> 
+            <h1 className=''>Process to perform:</h1>
             <li>1. Easy to find the binary and hexadecimal code of any text.</li>
             <li>2. In this CTF, you will be able to find out the decimal and hexadecimal value of plain text of ING Skill.</li>
             <li>3. For this, you need to go through the website.</li>
@@ -48,7 +50,7 @@ function Quiz() {
           <h1 className="text-3xl font-bold mb-4">Let's begin the challenge !!</h1>
           <p className="text-lg mb-2">Can you crack the answers? </p>
           <p className="text-xl mb-4 text-red-500">Flag 1: What is the IP Address of the website?</p>
-          
+
           <form onSubmit={handleSubmit1} className="flex items-center space-x-2 mb-4">
             <input
               type="text"
@@ -109,7 +111,7 @@ export default Quiz;
 //     <div className='flex items-center bg-white'>
 //     <div className='text-left '>
 //       <ul>
-//      <h1 className=''>Process to perform:</h1> 
+//      <h1 className=''>Process to perform:</h1>
 //         <li>1. Easy to find the binary and hexadecimal code of any text.</li>
 //         <li>2. In this CTF, you will be able to find out the decimal and hexadecimal value of plain text of ING Skill.</li>
 //         <li>3. For this, you need to go through the website.</li>
@@ -133,7 +135,7 @@ export default Quiz;
 //   </button>
 //   </form>
 
-      
+
 //         <p className="text-xl mb-4 text-red-500">Flag 2: What script has been used?</p>
 //         <form onSubmit={handleSubmit} className="flex items-center space-x-2">
 //   <input
