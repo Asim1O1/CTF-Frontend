@@ -16,8 +16,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-a {
+
+/* a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
@@ -72,7 +72,11 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+<<<<<<< HEAD
 } 
+=======
+} */
+>>>>>>> master
 
 /* :root {
   --primary-color: #646cff;
@@ -166,7 +170,7 @@ button:focus-visible {
 /* a:hover {
     color: var(--accent-color);
   }
-  
+
   button {
     background-color: var(--button-background-light);
     color: var(--text-color);
@@ -176,5 +180,4 @@ button:focus-visible {
     color: var(--text-color);
     border-color: var(--primary-color);
   }
->>>>>>> master
 } */
