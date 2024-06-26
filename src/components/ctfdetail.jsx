@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import img from '../assets/img.png';
+import Header from './navbar';
 
 function Quiz() {
   const [answer1, setAnswer1] = useState('');
@@ -75,51 +76,37 @@ function Quiz() {
         </div>
         <div className="max-w-2xl p-6 shadow-lg rounded-lg">
           <h1 className="text-3xl font-bold mb-4">Let's begin the challenge !!</h1>
-          <p className="text-lg mb-2">Can you crack the answers?</p>
-          
-          <div>
-            <p className="text-xl mb-4 text-red-500">Flag 1: What is the IP Address of the website?</p>
-            <form onSubmit={handleSubmit1} className="flex items-center space-x-2 mb-4">
-              <input
-                type="text"
-                value={answer1}
-                onChange={handleAnswerChange1}
-                placeholder="Answer format: ***.***.***.***"
-                className="p-2 border border-black-500 rounded-lg flex-grow hover:bg-blue-500"
-                style={{ backgroundColor: 'white' }}
-              />
-              <button type="submit" className="p-2 rounded-lg bg-white hover:bg-green-500">
-                Submit
-              </button>
-            </form>
-            {isAnswer1Correct !== null && (
-              <div className={`p-2 rounded-lg ${isAnswer1Correct ? 'bg-green-500' : 'bg-red-500'} text-white`}>
-                {isAnswer1Correct ? 'Correct! You answered Flag 1 correctly.' : 'Incorrect. Try again for Flag 1.'}
-              </div>
-            )}
-          </div>
+          <p className="text-lg mb-2">Can you crack the answers? </p>
+          <p className="text-xl mb-4 text-red-500">Flag 1: What is the IP Address of the website?</p>
 
-          <div>
-            <p className="text-xl mb-4 text-red-500">Flag 2: What script has been used?</p>
-            <form onSubmit={handleSubmit2} className="flex items-center space-x-2">
-              <input
-                type="text"
-                value={answer2}
-                onChange={handleAnswerChange2}
-                placeholder="Answer format: ***********"
-                className="p-2 border border-black-500 rounded-lg flex-grow hover:bg-blue-500"
-                style={{ backgroundColor: 'white' }}
-              />
-              <button type="submit" className="p-2 rounded-lg bg-white hover:bg-green-500">
-                Submit
-              </button>
-            </form>
-            {isAnswer2Correct !== null && (
-              <div className={`p-2 rounded-lg ${isAnswer2Correct ? 'bg-green-500' : 'bg-red-500'} text-white`}>
-                {isAnswer2Correct ? 'Correct! You answered Flag 2 correctly.' : 'Incorrect. Try again for Flag 2.'}
-              </div>
-            )}
-          </div>
+          <form onSubmit={handleSubmit1} className="flex items-center space-x-2 mb-4">
+            <input
+              type="text"
+              value={answer1}
+              onChange={handleAnswerChange1}
+              placeholder="Answer format: ***********"
+              className="p-2 border border-black-500 rounded-lg flex-grow hover:bg-blue-500"
+              style={{ backgroundColor: 'white' }}
+            />
+            <button type="submit" className="p-2 rounded-lg bg-white hover:bg-green-500">
+              Submit
+            </button>
+          </form>
+
+          <p className="text-xl mb-4 text-red-500">Flag 2: What script has been used?</p>
+          <form onSubmit={handleSubmit2} className="flex items-center space-x-2">
+            <input
+              type="text"
+              value={answer2}
+              onChange={handleAnswerChange2}
+              placeholder="Answer format: ***********"
+              className="p-2 border border-black-500 rounded-lg flex-grow hover:bg-blue-500"
+              style={{ backgroundColor: 'white' }}
+            />
+            <button type="submit" className="p-2 rounded-lg bg-white hover:bg-green-500">
+              Submit
+            </button>
+          </form>
         </div>
       </div>
     </>

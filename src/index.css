@@ -162,11 +162,11 @@ button:focus-visible {
     --button-border-color: transparent;
   } */
 
-  /* Adjustments for light mode */
-  /* a:hover {
+/* Adjustments for light mode */
+/* a:hover {
     color: var(--accent-color);
   }
-  
+
   button {
     background-color: var(--button-background-light);
     color: var(--text-color);
