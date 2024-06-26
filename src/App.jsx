@@ -8,17 +8,16 @@ import Topic from "./components/topic";
 import Scenario from "./components/scenario";
 import Process from "./components/process";
 import Ctfdetail from "./components/ctfdetail.jsx";
-
+import Admin from "./pages/Admin.jsx";
 
 function App() {
   return (
     <>
-      {/* <UserRegister>
-
-      </UserRegister> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Admin" element={<Admin />} />
+
           <Route path="/register" element={<UserRegister />} />
           <Route path="/login" element={<UserLogin />} />
 
