@@ -6,7 +6,7 @@ const Home = () => {
       {/* <header className="w-full flex justify-between items-center h-20 bg-gray-50 bg-opacity-50 text-black shadow-md fixed backdrop-blur-3 z-10">
         <ul>
           <li className="ml-20 text-4xl">ING</li>
-        </ul>
+        </ul>git 
         <ul className="flex">
           <li className="mr-20 text-xl hover:bg-yellow-500 hover:shadow-xl transition-all px-4 py-2 rounded-full">
             Home
