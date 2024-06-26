@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header className="text-gray-600 body-font">
@@ -17,16 +17,16 @@ const Header = () => {
           >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
           </svg>
-          <span className="ml-3 text-xl">Tailblocks</span>
+          <span className="ml-3 text-xl">ING</span>
         </a>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-gray-900">First Link</a>
-          <a className="mr-5 hover:text-gray-900">Second Link</a>
-          <a className="mr-5 hover:text-gray-900">Third Link</a>
-          <a className="mr-5 hover:text-gray-900">Fourth Link</a>
+          <a className="mr-5 hover:text-gray-900">  <Link to="/">Home</Link></a>
+          <a className="mr-5 hover:text-gray-900">  <Link to="/about">About</Link></a>
+          <a className="mr-5 hover:text-gray-900">  <Link to="/intro">CTF</Link></a>
+          {/* <a className="mr-5 hover:text-gray-900">Fourth Link</a> */}
         </nav>
         <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-          Button
+        <Link to="/register">Register</Link>
           <svg
             fill="none"
             stroke="currentColor"

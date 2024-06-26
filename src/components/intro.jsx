@@ -2,7 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import img1 from '../assets/hackerimage.jpg';
-
+import Header from './navbar';
 const topics = [
   { id: 1, title: 'Code Analysis', image: img1, description: 'Introduction to Code Analysis.' },
   { id: 2, title: 'Malware Analysis', image: img1, description: 'Introduction to Malware Analysis.' },
@@ -20,6 +20,8 @@ const Intro = () => {
   const navigate = useNavigate();
 
   return (
+    <>
+    <Header></Header>
     <div className="p-10 grid grid-cols-5 gap-24 w-full">
       {topics.map(topic => (
         <div key={topic.id} className="relative bg-white shadow-lg rounded-lg overflow-hidden">
@@ -36,6 +38,7 @@ const Intro = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 
