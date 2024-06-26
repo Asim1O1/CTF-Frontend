@@ -7,6 +7,8 @@ import './App.css'
 // import img from '../assets/img.png';
 import  Quiz from "./components/ctfdetail.jsx"
 import CtfDetail from './components/newctfdetail.jsx'
+import Scenario from './components/scenario.jsx'
+
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
           <Route path="/register" element={<UserRegister />} />
           <Route path="/login" element={<UserLogin />} />
           <Route path="/CTFdetailpage" element={<CtfDetail />} />
+          <Route path="/scenario" element={<Scenario />} />
+
+          {/* <Route path="/Shodan" element={<Shodan />} /> */}
         </Routes>
       </BrowserRouter>
     </>
