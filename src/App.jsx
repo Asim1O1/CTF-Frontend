@@ -8,14 +8,14 @@ import Footer from './Components/Footer';
 import Sidebar from './Components/Sidebar';
 import Addq from './Components/Addq';
 import Addt from './Components/Addt'
+import UserDash from './Components/UserDash';
 
 
 function App() {
   const [count, setCount] = useState(0);
 
-  // Function to toggle sidebar
   const toggleSidebar = () => {
-    // Implement your toggle logic here
+    
     console.log('Sidebar toggled');
   };
 
@@ -27,6 +27,7 @@ function App() {
         <Sidebar isOpen={true} toggleSidebar={toggleSidebar} />
         <Addq  />
         <Addt/>
+        < UserDash/>
         <Footer />
       </>
     </ErrorBoundary>
