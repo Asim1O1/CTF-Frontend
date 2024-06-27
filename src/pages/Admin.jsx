@@ -4,6 +4,7 @@ import setting from "../assets/setting.png";
 import logout from "../assets/exit.png";
 import left from "../assets/left-arrow.png";
 import right from "../assets/right-arrow.png";
+import profilePic from "../assets/hacker.jpg"; // Make sure to import your profile picture
 
 const Admin = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -29,8 +30,8 @@ const Admin = () => {
     <div className="relative w-full h-full">
       <button
         id={isSidebarOpen ? "left" : "right"}
-        className={`absolute top-12 w-10 transition-transform ease-in-out duration-300 ${
-          isSidebarOpen ? "left-[400px]" : "left-4"
+        className={`absolute top-12 w-10 transition-transform ease-in-out duration-300 transform ${
+          isSidebarOpen ? "translate-x-[410px]" : "translate-x-4"
         }`}
         onClick={handleToggleSidebar}
       >
@@ -41,13 +42,22 @@ const Admin = () => {
       </button>
       <section
         id="sidebar"
-        className={`bg-black bg-opacity-20 backdrop-blur-sm w-1/5 h-[935px] absolute top-4 transition-transform ease-in-out duration-300 rounded-3xl shadow-2xl ${
-          isSidebarOpen ? "left-4" : "-left-full"
+        className={`bg-black  bg-opacity-20 backdrop-blur-sm w-1/5 h-[935px] absolute top-4 left-4 transition-transform ease-in-out duration-300 rounded-3xl shadow-2xl transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-[104%]"
         }`}
       >
-        <div className="w-16 h-16 rounded-full bg-stone-500 relative left-4 top-4 shadow-lg"></div>
-        <h1 className="text-4xl absolute top-7 left-24 text-black">
-          Admin Thapa
+        <div
+          id="profile"
+          className="w-16 h-16 rounded-full bg-stone-500 relative left-4 top-4 shadow-lg overflow-hidden"
+        >
+          <img
+            src={profilePic}
+            alt="Profile"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <h1 className="text-4xl absolute top-7 left-24 text-black bg-gradient-to-r from-rose-500 via-orange-500 to-orange-500 bg-clip-text text-transparent">
+          Utshab Thapa
         </h1>
         <hr className="bg-white h-1 mt-8" />
         <div
@@ -93,6 +103,14 @@ const Admin = () => {
           </div>
         </a>
       </section>
+      <section
+        id="main"
+        className={`bg-black bg-opacity-20 backdrop-blur-sm w-9/12 h-[935px] absolute top-4 left-[460px] transition-transform ease-in-out duration-300 rounded-3xl shadow-2xl transform ${
+          isSidebarOpen
+            ? "scale-x-98 translate-x-0"
+            : "scale-x-[125%] translate-x-[-15%]"
+        }`}
+      ></section>
     </div>
   );
 };
