@@ -97,10 +97,10 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="shadow-md w-full fixed top-0 left-0 pt-12">
-      <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
+    
+      <div className="md:flex font-[verdana] justify-between bg-white py-9 md:px-10 px-7">
         <div className="font-bold text-3xl cursor-pointer flex items-center font-Poppins text-gray-800">
-          <span className="font-Poppins font-bold text-3xl text-black-600 mr-1 pt-2">
+          <span className="transform-scale-Y-1 text-3xl text-black-600 mr-1 pt-2">
             <ion-icon name="logo-ionic"></ion-icon>
           </span>
           ING Skills
@@ -123,7 +123,6 @@ const NavBar = () => {
           </Button>
         </ul>
       </div>
-    </div>
   );
 };
 
