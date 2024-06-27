@@ -1,8 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-import logo from "../assets/1000014770 (2).jpg";
+import logo from "../assets/hacker.jpg";
 import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import Select from "react-select";
+import { getData } from "country-list";
 
 const UserRegister = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +12,7 @@ const UserRegister = () => {
     username: "",
     email: "",
     password: "",
+    country: "", // Add country to formData
   });
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
@@ -23,6 +26,13 @@ const UserRegister = () => {
     }));
   };
 
+  const handleSelectChange = (selectedOption) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      country: selectedOption.value,
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form Data:", formData);
@@ -32,7 +42,8 @@ const UserRegister = () => {
         !formData.fullname ||
         !formData.username ||
         !formData.email ||
-        !formData.password
+        !formData.password ||
+        !formData.country // Check if country is filled
       ) {
         Swal.fire({
           icon: "error",
@@ -97,23 +108,28 @@ const UserRegister = () => {
     }
   };
 
+  const countries = getData().map((country) => ({
+    value: country.code,
+    label: country.name,
+  }));
+
   return (
     <>
-      <div className="flex">
+      <div className="flex w-full h-screen">
         <div className="w-1/2">
           <img
             src={logo}
             alt="hacker theme image"
-            className="w-full h-full object-cover rounded-lg ml-30"
+            className="w-full h-full object-cover ml-30"
           />
         </div>
         <div className="w-1/2 flex flex-col justify-center p-4 bg-black">
           <div>
-            <h2 className="text-5xl font-extrabold text-left text-red-600">
+            <h2 className="text-6xl font-extrabold text-left text-red-600">
               Register
             </h2>
           </div>
-          <form className="w-2/3  mb-4 mt-8 space-y-6" onSubmit={handleSubmit}>
+          <form className="w-2/3 mb- mt-8 space-y-6" onSubmit={handleSubmit}>
             <div>
               <p className="text-left text-white">Full Name:</p>
               <label htmlFor="full-name" className="sr-only">
@@ -147,7 +163,23 @@ const UserRegister = () => {
               />
             </div>
             <div>
-              <p className="text-left text-white">Email:</p>
+              <p className="text-left text-white">Country:</p>
+              <label htmlFor="country" className="sr-only">
+                Country
+              </label>
+              <Select
+                id="country"
+                name="country"
+                options={countries}
+                className=" appearance rounded-md relative block w-full h-9  border-3 border-gray-300 text-gray-900"
+                value={countries.find(
+                  (option) => option.value === formData.country
+                )}
+                onChange={handleSelectChange}
+              />
+            </div>
+            <div>
+              <p className="text-left text-white ">Email:</p>
               <label htmlFor="email-address" className="sr-only">
                 Email address
               </label>
