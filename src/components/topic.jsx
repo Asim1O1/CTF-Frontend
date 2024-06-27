@@ -1,6 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import img1 from '../assets/img1.jpeg';
+<<<<<<< HEAD
+=======
+import Header from './navbar';
+// import './App.css'; 
+>>>>>>> master
 
 
 const topics = [
@@ -16,9 +21,17 @@ const Topic = () => {
   const navigate = useNavigate();
 
   return (
+<<<<<<< HEAD
     <div className="flex w-full min-h-screen">
       {/* Sidebar Navigation */}
       <nav className="w-1/5 bg-gray-800 text-white p-4 min-h-screen">
+=======
+    <>
+      <Header/>
+    <div className="flex w-full min-h-screen bg-gray-500 ">
+      {/* Sidebar Navigation */}
+      <nav className="w-1/6 bg-gray-800 text-white font-size-15 p-4 min-h-screen bg-gray-500">
+>>>>>>> master
         <h2 className="text-2xl font-bold mb-10">Dive Into Challenges..</h2>
         <ul>
           <li className="mb-5">
@@ -50,8 +63,14 @@ const Topic = () => {
                 <h3 className="text-lg font-bold text-gray-800">{topic.title}</h3>
                 <p className="text-gray-600">{topic.description}</p>
                 <button
+<<<<<<< HEAD
                   onClick={() => navigate(`/intro/${topic.id}`)}
                   className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300">
+=======
+                  onClick={() => navigate(`/topic/${topic.id}`)}
+                  className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300"
+                >
+>>>>>>> master
                   Learn More
                 </button>
 
@@ -61,10 +80,13 @@ const Topic = () => {
         </div>
       </div>
     </div>
+</>
+
   );
 };
 
 export default Topic;
+<<<<<<< HEAD
 // import React, { useState, useEffect } from 'react';
 // import { useNavigate } from 'react-router-dom';
 // // import axios from 'axios';
@@ -154,3 +176,10 @@ export default Topic;
 // };
 
 // export default Topic;
+=======
+
+
+
+
+
+>>>>>>> master
