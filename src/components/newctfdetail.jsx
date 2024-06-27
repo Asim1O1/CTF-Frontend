@@ -1,11 +1,9 @@
-
-
-
 import React, { useState } from 'react';
 import img from '../assets/img.png'; // Ensure this path is correct based on your project structure
 import greenFlagImage from '../assets/greenflag.png'; // Path to your green flag image
 import redFlagImage from '../assets/redflag.png'; // Path to your red flag image
 import Confetti from 'react-confetti';
+import Header from './navbar';
 
 function CtfDetail() {
   const [answer1, setAnswer1] = useState('');
@@ -74,6 +72,7 @@ function CtfDetail() {
 
   return (
     <>
+      <Header/> 
       <div className="relative h-50">
         {/* Background Image and Overlay */}
         <div
@@ -226,5 +225,3 @@ function CtfDetail() {
 }
 
 export default CtfDetail;
-
-
