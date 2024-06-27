@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import img1 from '../assets/img1.jpeg'; 
+import img1 from '../assets/img1.jpeg';
 import Header from './navbar';
 // import './App.css';
 
@@ -21,23 +21,6 @@ const Intro = () => {
 
   return (
     <>
-<<<<<<< HEAD
-
-    <div className="p-10 grid grid-cols-5 gap-24 w-full">
-    <Header/>
-      {topics.map(topic => (
-        <div key={topic.id} className="relative bg-white shadow-lg rounded-lg overflow-hidden">
-          <img src={topic.image} alt={topic.title} className="w-80 h-96 object-cover"  />
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
-            <h3 className="text-white text-lg font-bold">{topic.title}</h3>
-            <button
-              onClick={() => navigate(`/topic/${topic.id}`)}
-              className="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
-            >
-              Learn More
-            </button>
-          </div>
-=======
       <Header/>
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-500 to-gray-900 text-black">
       <div className="max-w-2xl w-full p-2 bg-white rounded-lg shadow-lg">
@@ -51,7 +34,6 @@ const Intro = () => {
           >
             Explore Scenario
           </button>
->>>>>>> master
         </div>
       </div>
     </div>

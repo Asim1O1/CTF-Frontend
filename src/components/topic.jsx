@@ -2,22 +2,16 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import img1 from '../assets/img1.jpeg';
 import Header from './navbar';
-// import './App.css'; 
+// import './App.css';
 
 
 const topics = [
-<<<<<<< HEAD
-  { id: 1, title: 'Code Analysis', image: img1, description: 'Introduction to Code Analysis. An enumeration is a complete, ordered listing of all the items in a collection. The term is commonly used in mathematics and computer science to refer to a listing of all of the elements of a set. The precise requirements for an enumeration (for example, whether the set must be finite, or whether the list is allowed to contain repetitions) depend on the discipline of study and the context of a given problem.' },
-  { id: 2, title: 'Malware Analysis', image: 'assets/img1.jpeg', description: 'Introduction to Malware Analysis. An enumeration is a complete, ordered listing of all the items in a collection. The term is commonly used in mathematics and computer science to refer to a listing of all of the elements of a set. The precise requirements for an enumeration (for example, whether the set must be finite, or whether the list is allowed to contain repetitions) depend on the discipline of study and the context of a given problem.' },
-
-=======
   { id: 1, title: 'Scanning Network', image: img1, description: 'Introduction: Enumeration is the ordered listing of all items in a collection, often used in math and computer science.' },
   { id: 2, title: 'Ethical Hacking', image: img1, description: 'Introduction to Malware Analysis.' },
   { id: 3, title: 'Network Security', image: img1, description: 'Introduction to Network Security.' },
   { id: 4, title: 'Web Security', image: img1, description: 'Introduction to Web Security.' },
   { id: 5, title: 'Incident Response', image: img1, description: 'Introduction to Incident Response.' },
   { id: 6, title: 'Threat Intelligence', image: img1, description: 'Introduction to Threat Intelligence.' },
->>>>>>> master
 ];
 
 const Topic = () => {

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { useEffect } from "react";
-=======
-import React, { useState } from "react";
->>>>>>> master
+import React, { useEffect, useState } from "react";
 import Header from "../components/navbar";
 import Swal from "sweetalert2";
 
