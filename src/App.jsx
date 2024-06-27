@@ -19,7 +19,7 @@ import CtfDetail from "./components/newctfdetail.jsx";
 // import Addt from './Components/Addt'
 // import UserDash from './Components/UserDash';
 // import Scenario from './components/scenario.jsx'
-// function App() {
+import Leaderboard from "./components/leaderboard.jsx";// function App() {
 //   const [count, setCount] = useState(0);
 
 //   const toggleSidebar = () => {
@@ -60,6 +60,7 @@ function App() {
           <Route path="/ctfdetail" element={<CtfDetail />} />
           {/* <Route path="/try" element={<Try/>} /> */}
           <Route path="/newctfdetail" element={<CtfDetail />} />
+          <Route path="/leaderboard" element={<Leaderboard/>}/>
         </Routes>
       </BrowserRouter>
     </>

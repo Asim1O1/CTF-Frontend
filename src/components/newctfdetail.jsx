@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import img from '../assets/img.png'; // Ensure this path is correct based on your project structure
 import greenFlagImage from '../assets/greenflag.png'; // Path to your green flag image
@@ -72,7 +73,7 @@ function CtfDetail() {
 
   return (
     <>
-      <Header/> 
+      <Header/>
       <div className="relative h-50">
         {/* Background Image and Overlay */}
         <div
