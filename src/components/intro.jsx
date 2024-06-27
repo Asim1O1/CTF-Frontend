@@ -42,3 +42,60 @@ const Intro = () => {
 };
 
 export default Intro;
+// import React, { useState, useEffect } from 'react';
+// import { useParams, useNavigate } from 'react-router-dom';
+// // import axios from 'axios';
+
+// const Intro = () => {
+//   const { id } = useParams();
+//   const navigate = useNavigate();
+//   const [topic, setTopic] = useState(null);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     // Replace this URL with your actual backend endpoint
+//     const fetchData = async () => {
+//       try {
+//         const response = await axios.get(`{https://your-backend-endpoint}/api/topics/${id}`);
+//         setTopic(response.data);
+//       } catch (err) {
+//         setError('Failed to fetch topic data');
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchData();
+//   }, [id]);
+
+//   if (loading) {
+//     return <div className="flex items-center justify-center min-h-screen bg-black-800 text-white">Loading...</div>;
+//   }
+
+//   if (error) {
+//     return <div className="flex items-center justify-center min-h-screen bg-black-800 text-white">{error}</div>;
+//   }
+
+//   if (!topic) {
+//     return <div className="flex items-center justify-center min-h-screen bg-black-800 text-white">Topic not found</div>;
+//   }
+
+//   return (
+//     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-800">
+//       <div className="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg">
+//         <img src={topic.image} alt={topic.title} className="w-full h-64 object-cover rounded-lg mb-6" />
+//         <h2 className="text-3xl font-bold mb-4">{topic.title}</h2>
+//         <p className="text-lg mb-8">{topic.description}</p>
+//         <button
+//           onClick={() => navigate(`/scenario/${id}`)}
+//           className="px-6 py-3 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600 transition-colors duration-300"
+//         >
+//           Explore Scenario
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Intro;
