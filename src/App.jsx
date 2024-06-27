@@ -9,6 +9,7 @@ import Scenario from "./components/scenario";
 import Process from "./components/process";
 import Ctfdetail from "./components/ctfdetail.jsx";
 import Admin from "./pages/Admin.jsx";
+import Try from "./components/try.jsx";
 
 function App() {
   return (
@@ -19,13 +20,14 @@ function App() {
           <Route path="/Admin" element={<Admin />} />
 
           <Route path="/register" element={<UserRegister />} />
-          <Route path="/login" element={<UserLogin />} />
+          <Route path="/login" element={<UserLogin/>} />
 
           <Route path="/intro" element={<Intro />} />
           <Route path="/topic/:id" element={<Topic />} />
           <Route path="/scenario/:id" element={<Scenario />} />
           <Route path="/process/:id" element={<Process />} />
           <Route path="/ctfdetail" element={<Ctfdetail />} />
+          <Route path="/try" element={<Try/>} />
         </Routes>
       </BrowserRouter>
     </>

@@ -21,8 +21,9 @@ const Intro = () => {
 
   return (
     <>
-    <Header></Header>
+
     <div className="p-10 grid grid-cols-5 gap-24 w-full">
+    <Header/>
       {topics.map(topic => (
         <div key={topic.id} className="relative bg-white shadow-lg rounded-lg overflow-hidden">
           <img src={topic.image} alt={topic.title} className="w-80 h-96 object-cover"  />
