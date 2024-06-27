@@ -1,9 +1,8 @@
-// eslint-disable-next-line no-unused-vars
+
 import React, { useState } from 'react';
 import './App.css';
 import NavBar from './Components/NavBar';
 import Hero from './Components/Hero';
-import ErrorBoundary from './Components/ErrorBoundary';
 import Footer from './Components/Footer';
 import Sidebar from './Components/Sidebar';
 import Addq from './Components/Addq';
@@ -20,7 +19,7 @@ function App() {
   };
 
   return (
-    <ErrorBoundary>
+    
       <>
         <NavBar />
         <Hero />
@@ -30,7 +29,6 @@ function App() {
         < UserDash/>
         <Footer />
       </>
-    </ErrorBoundary>
   );
 }
 

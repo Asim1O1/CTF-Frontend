@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import { FiChevronDown, FiPlus } from 'react-icons/fi';
 import Swal from 'sweetalert2';
@@ -25,7 +24,6 @@ const Addt = () => {
         showConfirmButton: false,
         timer: 1500
       });
-      
     }
   };
 
@@ -45,7 +43,6 @@ const Addt = () => {
               placeholder="Enter topic title..."
             />
           </div>
-
           <div>
             <label htmlFor="description" className="text-[24px] block font-semibold text-gray-700">Description</label>
             <textarea
@@ -58,7 +55,6 @@ const Addt = () => {
               placeholder="Enter description..."
             ></textarea>
           </div>
-
           <div className="relative group">
             <label htmlFor="question-type" className="text-[24px] block font-semibold text-gray-700">Topic Type</label>
             <div className="flex items-center mt-1 w-full border border-gray-300 rounded-md shadow-md focus-within:ring-yellow-600 focus-within:border-yellow-600">

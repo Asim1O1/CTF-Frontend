@@ -11,7 +11,7 @@ const UserDash = () => {
         <h2 className='text-black text-Left pt-7 mx-[20px] font-[verdana] font-regular text-[20px]  grid gap-[30px]'>
             Recent Rooms           
         </h2>
-        <div className="h-[500px] w-[650px] bg-gray-100 shadow-2xl rounded-md">
+        <div className="h-[500px] w-[650px] bg-gray-100 shadow-2xl rounded-md hover:h-[550px]">
 
         </div>
 
