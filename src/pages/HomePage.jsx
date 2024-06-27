@@ -1,9 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faSearch } from "@fortawesome/free-solid-svg-icons";
 import background from "../assets/background.jpg";
+import Swal from "sweetalert2";
+
 
 const Home = () => {
+
+  useEffect(() => {
+    const accessToken = localStorage.getItem("userToken");
+    if (!accessToken) {
+      Swal.fire({
+        icon: "error",
+        title: "Not Logged In!",
+        text: "You need to log in before using any functionality.",
+        showCancelButton: true,
+        confirmButtonText: "Log In",
+        cancelButtonText: "Cancel",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/login"; // Redirect to login page on confirmation
+        } else {
+
+          // Handle cancel action if needed
+        }
+      });
+    }
+  }, []);
+
   return (
     <>
       <div className="w-full">
@@ -214,6 +238,7 @@ const Home = () => {
   );
 };
 
+
 export default Home;
 
 // import React, { useState, useEffect } from "react";
@@ -418,3 +443,4 @@ export default Home;
 // };
 
 // export default Home;
+;

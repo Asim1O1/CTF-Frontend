@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import img1 from '../assets/img1.jpeg'; 
+import img1 from '../assets/img1.jpeg';
 import Header from './navbar';
 // import './App.css';
 

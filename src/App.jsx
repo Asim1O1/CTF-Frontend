@@ -8,7 +8,7 @@ import Topic from "./components/topic";
 import Scenario from "./components/scenario";
 import Admin from "./pages/Admin.jsx";
 import './App.css'
-import CtfDetail from './components/newctfdetail.jsx'
+import CtfDetail from "./components/newctfdetail.jsx";
 // import Scenario from './components/scenario.jsx'
 
 
@@ -30,6 +30,8 @@ function App() {
           <Route path="/topic/:id" element={<Intro />} />
           <Route path="/topic" element={<Topic />} />
           <Route path="/scenario/:id" element={<Scenario />} />
+          <Route path="/ctfdetail" element={<CtfDetail />} />
+          {/* <Route path="/try" element={<Try/>} /> */}
           <Route path="/newctfdetail" element={<CtfDetail />} />
         </Routes>
       </BrowserRouter>

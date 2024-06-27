@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import img1 from '../assets/img1.jpeg';
 import Header from './navbar';
-// import './App.css'; 
+// import './App.css';
 
 
 const topics = [
