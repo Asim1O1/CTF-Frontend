@@ -15,7 +15,7 @@ import './App.css'
 import  Quiz from "./components/ctfdetail.jsx"
 import CtfDetail from './components/newctfdetail.jsx'
 // import Scenario from './components/scenario.jsx'
-
+import Leaderboard from "./components/leaderboard.jsx";
 
 function App() {
   return (
@@ -37,6 +37,7 @@ function App() {
           <Route path="/scenario/:id" element={<Scenario />} />
           <Route path="/process/:id" element={<Process />} />
           <Route path="/ctfdetail" element={<Ctfdetail />} />
+          <Route path="/leaderboard" element={<Leaderboard/>}/>
         </Routes>
       </BrowserRouter>
     </>
