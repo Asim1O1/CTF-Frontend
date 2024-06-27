@@ -7,6 +7,7 @@ import ErrorBoundary from './Components/ErrorBoundary';
 import Footer from './Components/Footer';
 import Sidebar from './Components/Sidebar';
 import Addq from './Components/Addq';
+import Addt from './Components/Addt'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Hero />
         <Sidebar isOpen={true} toggleSidebar={toggleSidebar} />
         <Addq  />
+        <Addt/>
         <Footer />
       </>
     </ErrorBoundary>
