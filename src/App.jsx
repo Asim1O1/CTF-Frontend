@@ -14,7 +14,7 @@ import './App.css'
 // import img from '../assets/img.png';
 import  Quiz from "./components/ctfdetail.jsx"
 import CtfDetail from './components/newctfdetail.jsx'
-import Scenario from './components/scenario.jsx'
+// import Scenario from './components/scenario.jsx'
 
 
 function App() {
