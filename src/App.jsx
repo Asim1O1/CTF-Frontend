@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UserLogin from "./components/login";
@@ -9,41 +10,61 @@ import Scenario from "./components/scenario";
 import Admin from "./pages/Admin.jsx";
 import './App.css'
 import CtfDetail from "./components/newctfdetail.jsx";
-// import Scenario from './components/scenario.jsx'
 
+// import NavBar from './Components/NavBar';
+// import Hero from './Components/Hero';
+// import Footer from './Components/Footer';
+// import Sidebar from './Components/Sidebar';
+// import Addq from './Components/Addq';
+// import Addt from './Components/Addt'
+// import UserDash from './Components/UserDash';
+// import Scenario from './components/scenario.jsx'
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   const toggleSidebar = () => {
+
+//     console.log('Sidebar toggled');
+//   };
+
+//   return (
+
+//       <>
+//         <NavBar />
+//         <Hero />
+//         <Sidebar isOpen={true} toggleSidebar={toggleSidebar} />
+//         <Addq  />
+//         <Addt/>
+//         < UserDash/>
+//         <Footer />
+//       </>
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const toggleSidebar = () => {
-
-    console.log('Sidebar toggled');
-  };
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Admin" element={<Admin />} />
+
+          <Route path="/register" element={<UserRegister />} />
+          <Route path="/login" element={<UserLogin />} />
+          <Route path="/CTFdetailpage" element={<CtfDetail />} />
+          <Route path="/scenario" element={<Scenario/>} />
+
+          {/* <Route path="/Shodan" element={<Shodan />} /> */}
+
+          <Route path="/topic/:id" element={<Intro />} />
+          <Route path="/topic" element={<Topic />} />
+          <Route path="/scenario/:id" element={<Scenario />} />
+          <Route path="/ctfdetail" element={<CtfDetail />} />
+          {/* <Route path="/try" element={<Try/>} /> */}
+          <Route path="/newctfdetail" element={<CtfDetail />} />
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+
+  );
 }
 
 export default App;

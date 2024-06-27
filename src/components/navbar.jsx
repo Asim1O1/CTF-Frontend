@@ -1,57 +1,51 @@
-import React from "react";
-import {  useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import {  logout } from "../redux/authSlice";
 
-const Header = () => {
 
-  const dispatch = useDispatch();
+import React, { useState } from 'react';
+import Button from './Button';
 
-  const handleLogout = () => {
-    dispatch(logout());
-  };
+const NavBar = () => {
+  const Links = [
+    { name: "HOME", link: "/" },
+    { name: "SERVICE", link: "/" },
+    { name: "CTF", link: "/" },
+  ];
+
+  const [open, setOpen] = useState(false);
 
   return (
-    <header className="text-gray-600 body-font">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg>
-          <span className="ml-3 text-xl">ING</span>
-        </a>
-        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-gray-900">  <Link to="/">Home</Link></a>
-          <a className="mr-5 hover:text-gray-900">  <Link to="/about">About</Link></a>
-          <a className="mr-5 hover:text-gray-900">  <Link to="/topic">CTF</Link></a>
-          {/* <a className="mr-5 hover:text-gray-900">Fourth Link</a> */}
-        </nav>
-        <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-        <Link to="/register">Register</Link>
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="w-4 h-4 ml-1"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </button>
+    
+      <div className="md:flex font-[verdana] justify-between bg-white py-9 md:px-10 px-7">
+        <div className="font-bold text-3xl cursor-pointer flex items-center font-Poppins text-gray-800">
+          <span className="transform-scale-Y-1 text-3xl text-black-600 mr-1 pt-2">
+            <ion-icon name="logo-ionic"></ion-icon>
+          </span>
+          ING Skills
+        </div>
+
+        <div onClick={() => setOpen(!open)} className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden">
+          <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
+        </div>
+
+        <ul className={` m-[12] md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20' : 'top-[-490px]'}`}>
+          {Links.map((link) => (
+            <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
+              <a href={link.link} className="text-gray-800 hover:text-gray-400 duration-500">
+                {link.name}
+              </a>
+            </li>
+          ))}
+          <Button className=" font-medium font-Poppins ">
+            Register
+          </Button>
+        </ul>
       </div>
-    </header>
   );
 };
 
-export default Header;
+export default NavBar;
+
+
+
+
+
+
