@@ -1,16 +1,5 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-<<<<<<< HEAD
-import img1 from "../assets/hackerimage.jpg";
-
-const introTopics = [
-  { id: 1, title: 'Scanning Network', image: img1, description: 'Introduction: Enumeration is the ordered listing of all items in a collection, often used in math and computer science.' },
-  { id: 2, title: 'Ethical Hacking', image: img1, description: 'Introduction to Malware Analysis.' },
-  { id: 3, title: 'Network Security', image: img1, description: 'Introduction to Network Security.' },
-  { id: 4, title: 'Web Security', image: img1, description: 'Introduction to Web Security.' },
-  { id: 5, title: 'Incident Response', image: img1, description: 'Introduction to Incident Response.' },
-  { id: 6, title: 'Threat Intelligence', image: img1, description: 'Introduction to Threat Intelligence.' },
-=======
 import img1 from '../assets/img1.jpeg'; 
 import Header from './navbar';
 // import './App.css';
@@ -19,33 +8,11 @@ const topics = [
   { id: 1, title: 'Code Analysis', image: img1, description: 'Introduction to Code Analysis. An enumeration is a complete, ordered listing of all the items in a collection. The term is commonly used in mathematics and computer science to refer to a listing of all of the elements of a set. The precise requirements for an enumeration (for example, whether the set must be finite, or whether the list is allowed to contain repetitions) depend on the discipline of study and the context of a given problem.' },
   { id: 2, title: 'Malware Analysis', image: '', description: 'Introduction to Malware Analysis. An enumeration is a complete, ordered listing of all the items in a collection. The term is commonly used in mathematics and computer science to refer to a listing of all of the elements of a set. The precise requirements for an enumeration (for example, whether the set must be finite, or whether the list is allowed to contain repetitions) depend on the discipline of study and the context of a given problem.' },
   // Add more topics as needed
->>>>>>> master
 ];
 
 const Intro = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-<<<<<<< HEAD
-  const topic = introTopics.find(t => t.id === parseInt(id));
-
-  if (!topic) {
-    return <div className="flex items-center justify-center min-h-screen bg-gray-800 text-white">Topic not found</div>;
-  }
-
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-800">
-      <div className="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg">
-        <img src={topic.image} alt={topic.title} className="w-full h-64 object-cover rounded-lg mb-6" />
-        <h2 className="text-3xl font-bold mb-4">{topic.title}</h2>
-        <p className="text-lg mb-8">{topic.description}</p>
-        <button
-          onClick={() => navigate(`/scenario/${id}`)}
-          className="px-6 py-3 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600 transition-colors duration-300"
-        >
-          Explore Scenario
-        </button>
-
-=======
   const topic = topics.find(t => t.id === parseInt(id));
 
   if (!topic) {
@@ -68,7 +35,6 @@ const Intro = () => {
             Explore Scenario
           </button>
         </div>
->>>>>>> master
       </div>
     </div>
     </>

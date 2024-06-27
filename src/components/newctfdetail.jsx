@@ -82,7 +82,7 @@ function CtfDetail() {
             backgroundColor: 'rgba(0,0,0,0.5)', // Adjust opacity as needed
           }}
         >
-          <div className="absolute inset-0 bg-black opacity-75"></div>
+          <div className="absolut e inset-0 bg-black opacity-75"></div>
         </div>
         {/* Content Container */}
         <div className="relative z-10 flex flex-col justify-center items-center h-full text-white">
@@ -97,7 +97,7 @@ function CtfDetail() {
         </div>
       </div>
 
-      <div className="p-6 bg-white shadow-lg">
+      <div className="p-6 bg-slate shadow-lg">
         <div className="flex">
           <div className="w-1/2 p-4">
             <h1 className="text-xl mb-4">Flag 1: What are the opened ports?</h1>
