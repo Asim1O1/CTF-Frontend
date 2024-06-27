@@ -9,6 +9,10 @@ import Scenario from "./components/scenario";
 import Admin from "./pages/Admin.jsx";
 import './App.css'
 import CtfDetail from './components/newctfdetail.jsx'
+<<<<<<< HEAD
+=======
+// import Scenario from './components/scenario.jsx'
+>>>>>>> f1b4ecec6db5fba5737a3f74819e0a6495fb3252
 
 
 function App() {
