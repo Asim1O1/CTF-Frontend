@@ -12,6 +12,7 @@ import "./App.css";
 import CtfDetail from "./components/newctfdetail.jsx";
 
 import Leaderboard from "./components/leaderboard.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
 
           <Route path="/newctfdetail" element={<CtfDetail />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/footer" element={<Footer />} />
         </Routes>
       </BrowserRouter>
     </>
