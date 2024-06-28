@@ -10,6 +10,7 @@ import Scenario from "./components/scenario";
 import Admin from "./pages/Admin.jsx";
 import './App.css'
 import CtfDetail from "./components/newctfdetail.jsx";
+import axios from "axios"
 
 // import NavBar from './Components/NavBar';
 // import Hero from './Components/Hero';

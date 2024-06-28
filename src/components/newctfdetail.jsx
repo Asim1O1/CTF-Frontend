@@ -1,10 +1,11 @@
 
+
 import React, { useState, useEffect } from 'react';
 import img from '../assets/img.png'; // Ensure this path is correct based on your project structure
 import greenFlagImage from '../assets/greenflag.png'; // Path to your green flag image
 import redFlagImage from '../assets/redflag.png'; // Path to your red flag image
-import Confetti from 'react-confetti';
 import Header from './navbar';
+import Popup from './popup'; // Correct import path and casing
 
 function CtfDetail() {
   const [answer1, setAnswer1] = useState('');
@@ -18,6 +19,8 @@ function CtfDetail() {
   const [showRedFlag2, setShowRedFlag2] = useState(false);
 
   const [windowDimensions, setWindowDimensions] = useState({ width: 0, height: 0 });
+  const [flagsCaptured, setFlagsCaptured] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const updateWindowDimensions = () => {
@@ -44,7 +47,9 @@ function CtfDetail() {
     if (correct) {
       setShowFlag1(true);
       setShowRedFlag1(false);
+      setFlagsCaptured((prev) => prev + 1);
       setTimeout(() => setShowFlag1(false), 3000);
+      setShowPopup(true);
     } else {
       setShowRedFlag1(true);
       setShowFlag1(false);
@@ -59,7 +64,9 @@ function CtfDetail() {
     if (correct) {
       setShowFlag2(true);
       setShowRedFlag2(false);
+      setFlagsCaptured((prev) => prev + 1);
       setTimeout(() => setShowFlag2(false), 3000);
+      setShowPopup(true);
     } else {
       setShowRedFlag2(true);
       setShowFlag2(false);
@@ -71,9 +78,11 @@ function CtfDetail() {
 
   const handleAnswerChange2 = (e) => setAnswer2(e.target.value);
 
+  const closePopup = () => setShowPopup(false);
+
   return (
     <>
-      <Header/>
+      <Header />
       <div className="relative h-50">
         {/* Background Image and Overlay */}
         <div
@@ -120,27 +129,12 @@ function CtfDetail() {
               </div>
             )}
 
-            {showFlag1 && (
-              <>
-                <Confetti
-                  width={windowDimensions.width}
-                  height={windowDimensions.height}
-                  numberOfPieces={300}
-                  recycle={false}
-                />
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 transition-opacity duration-500 z-50">
-                  <div className="p-8 rounded-lg animate-fade-in flex justify-center items-center">
-                    <img src={greenFlagImage} alt="Flag 1" className="max-w-[200px] max-h-[200px]" />
-                  </div>
-                </div>
-              </>
-            )}
-
             {showRedFlag1 && (
-              <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 transition-opacity duration-500 z-50">
-                <div className=" p-8 rounded-lg animate-fade-in flex justify-center items-center">
-                  <img src={redFlagImage} alt="Flag 1 Incorrect" className="max-w-[200px] max-h-[200px]" />
+              <div className="fixed inset-0 flex items-center justify-center z-50">
+                <div className="relative z-10 p-8 rounded-lg animate-fade-in flex justify-center items-center">
+                  <img src={redFlagImage} alt="Flag 1 Incorrect" className="max-w-[200px] max-h-[250px]" />
                 </div>
+                <div className="fixed inset-0 bg-slate-200 bg-opacity-50 backdrop-blur-sm"></div>
               </div>
             )}
 
@@ -163,43 +157,32 @@ function CtfDetail() {
               </div>
             )}
 
-            {showFlag2 && (
-              <>
-                <Confetti
-                  width={windowDimensions.width}
-                  height={windowDimensions.height}
-                  numberOfPieces={300}
-                  recycle={false}
-                />
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 transition-opacity duration-500 z-50">
-                  <div className="p-8 rounded-lg animate-fade-in flex justify-center items-center">
-                    <img src={greenFlagImage} alt="Flag 2" className="max-w-[200px] max-h-[200px]" />
-                  </div>
-                </div>
-              </>
-            )}
-
             {showRedFlag2 && (
-              <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 transition-opacity duration-500 z-50">
-                <div className=" p-8 rounded-lg animate-fade-in flex justify-center items-center">
-                  <img src={redFlagImage} alt="Flag 2 Incorrect" className="max-w-[200px] max-h-[200px]" />
+              <div className="fixed inset-0 flex items-center justify-center z-50">
+                <div className="relative z-10 p-8 rounded-lg animate-fade-in flex justify-center items-center">
+                  <img src={redFlagImage} alt="Flag 2 Incorrect" className="max-w-[200px] max-h-[250px]" />
                 </div>
+                <div className="fixed inset-0 bg-slate-200 bg-opacity-50 backdrop-blur-sm"></div>
               </div>
             )}
           </div>
-          <div className=" mx-[80px] p-4 px-[20px] bg-black bg-opacity-20 border rounded-xl">
+          <div className="mx-[80px] p-4 px-[20px] bg-black bg-opacity-20 border rounded-xl">
             <h1 className="text-xl font-bold mb-4 text-center">Process to perform:</h1>
             <ul className="list-disc list-inside mx-10">
               <li>To begin, we have to take IP of anything.</li>
-              <li>For this, you need to go through the website.</li>
-              <li><a href="https://www.shodan.io/host/8.8.8x" target="_blank"><b><u>https://www.shodan.io/host/8.8.8 </u></b></a></li>
+              <li>For this, you need to go through the website;</li>
+              <li><a href="https://www.shodan.io/host/8.8.8x" target="_blank" className="text-blue-500 hover:underline">Shodan.io</a></li>
+              <li>This is the IP address of Google DNS Server</li>
+              <li>Through this, you can search for more IPs</li>
             </ul>
           </div>
         </div>
       </div>
+
+      {showPopup && <Popup flagsCaptured={flagsCaptured} closePopup={closePopup} />}
     </>
+    
   );
 }
 
 export default CtfDetail;
-
