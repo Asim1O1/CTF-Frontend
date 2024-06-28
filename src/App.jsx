@@ -23,7 +23,7 @@ function App() {
       <>
         <NavBar />
         <Hero />
-        <Sidebar isOpen={true} toggleSidebar={toggleSidebar} />
+        {/* <Sidebar isOpen={true} toggleSidebar={toggleSidebar} /> */}
         <Addq  />
         <Addt/>
         < UserDash/>
