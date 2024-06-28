@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faSearch } from "@fortawesome/free-solid-svg-icons";
 import background from "../assets/background.jpg";
-import Navigation from "../components/navigation";
+import Navbar from "../components/navbar";
 
 const Home = () => {
   return (
     <>
       <div className="w-full">
-        <Navigation />
+        <Navbar />
         <div
           id="hero"
-          className="relative w-full h-screen bg-cover bg-center bg-no-repeat shadow-2xl"
-          style={{ backgroundImage: `url(${background})` }}
+            className="relative w-full h-screen bg-cover bg-center bg-no-repeat shadow-2xl"
+            style={{ backgroundImage: `url(${background})` }}
         >
           {/* Overlay with backdrop filter */}
           <div className="absolute inset-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-lg"></div>
