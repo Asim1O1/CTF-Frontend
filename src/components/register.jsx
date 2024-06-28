@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../redux/authAction";
@@ -45,11 +46,9 @@ const UserRegister = () => {
         title: "Registration Successful",
         text: "You have successfully registered!",
       });
-      setTimeout(()=>
-      {
+      setTimeout(() => {
         navigate("/login");
-      }, 3000)
-
+      }, 3000);
     } catch (err) {
       swal.fire({
         icon: "error",

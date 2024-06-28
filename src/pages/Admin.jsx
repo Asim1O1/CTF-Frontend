@@ -4,7 +4,7 @@ import setting from "../assets/setting.png";
 import logout from "../assets/exit.png";
 import left from "../assets/left-arrow.png";
 import right from "../assets/right-arrow.png";
-import profilePic from "../assets/hacker.jpg"; // Make sure to import your profile picture
+import profilePic from "../assets/hacker.jpg";
 
 const Admin = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
