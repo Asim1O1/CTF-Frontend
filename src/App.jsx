@@ -1,43 +1,40 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UserLogin from "./components/login";
+import UserRegister from "./components/register";
+import Home from "./pages/HomePage";
+import Intro from "./components/intro";
+import Topic from "./components/topic";
+import Scenario from "./components/scenario";
+import Admin from "./pages/Admin.jsx";
+import "./App.css";
+import CtfDetail from "./components/newctfdetail.jsx";
 
-import React, { useState,useEffect } from 'react';
-import './App.css';
-import NavBar from './Components/NavBar';
-import Hero from './Components/Hero';
-import Footer from './Components/Footer';
-import Sidebar from './Components/Sidebar';
-import Addq from './Components/Addq';
-import Addt from './Components/Addt'
-import UserDash from './Components/UserDash';
-import axios from 'axios';
+import Leaderboard from "./components/leaderboard.jsx";
 
 function App() {
-  const [todos, setTodos] = useState([]);
-  useEffect(() => {
-    axios
-    .get('https://jsonplaceholder.typicode.com/todos')
-      .then((response) => setTodos(response.data))
-      .catch((error) => console.error(error));
-  }, []);
-
-  const toggleSidebar = () => {
-    
-    console.log('Sidebar toggled');
-  };
-
   return (
-      <>
-       <div className="app">
-        {todos.map((todo) => (
-        <li key={todo.id}>{todo.title}</li>))}
-       </div>
-        <NavBar />
-        <Hero />
-        {/* <Sidebar isOpen={true} toggleSidebar={toggleSidebar} /> */}
-        <Addq  />
-        <Addt/>
-        < UserDash/>
-        <Footer />
-      </>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<Admin />} />
+
+          <Route path="/register" element={<UserRegister />} />
+          <Route path="/login" element={<UserLogin />} />
+          <Route path="/ctfdetailpage" element={<CtfDetail />} />
+          <Route path="/scenario" element={<Scenario />} />
+
+          <Route path="/topic/:id" element={<Intro />} />
+          <Route path="/topic" element={<Topic />} />
+          <Route path="/scenario/:id" element={<Scenario />} />
+          <Route path="/ctfdetail" element={<CtfDetail />} />
+
+          <Route path="/newctfdetail" element={<CtfDetail />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

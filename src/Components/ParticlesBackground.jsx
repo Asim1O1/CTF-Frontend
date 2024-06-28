@@ -1,6 +1,5 @@
-
-import React from 'react';
-import Particles from 'react-tsparticles';
+import React from "react";
+import Particles from "react-tsparticles";
 
 const ParticlesBackground = () => {
   const particlesInit = async (main) => {
@@ -19,7 +18,7 @@ const ParticlesBackground = () => {
       options={{
         background: {
           color: {
-            value: "#000000", // Background color set to black
+            value: "#000000",
           },
         },
         fpsLimit: 60,
