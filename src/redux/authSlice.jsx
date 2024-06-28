@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { userLogin, registerUser } from "./authAction.jsx";
+import { userLogin, registerUser } from "./authAction";
 import swal from "sweetalert2";
 
 // initialize userToken from local storage
@@ -8,9 +8,10 @@ const userToken = localStorage.getItem("userToken")
   : null;
 
 const initialState = {
+  isAuthenticated: false,
   loading: false,
   userInfo: null,
-  userToken,
+  userToken: userToken ?? null,
   error: null,
   success: false,
 };
@@ -20,7 +21,8 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     logout: (state) => {
-      localStorage.removeItem("userToken"); // delete token from storage
+      localStorage.removeItem("userTokenHere");
+      state.isAuthenticated = false;
       state.loading = false;
       state.userInfo = null;
       state.userToken = null;
@@ -31,7 +33,6 @@ const authSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-
     builder
       .addCase(userLogin.pending, (state) => {
         state.loading = true;
@@ -41,10 +42,12 @@ const authSlice = createSlice({
         state.loading = false;
         state.userInfo = payload;
         state.userToken = payload.userToken;
+        state.isAuthenticated = true;
+        localStorage.setItem("userToken", payload.userToken);
         swal.fire({
-          icon: 'success',
-          title: 'Login Successful',
-          text: 'You have successfully logged in!',
+          icon: "success",
+          title: "Login Successful",
+          text: "You have successfully logged in!",
         });
       })
       .addCase(userLogin.rejected, (state, { payload }) => {
@@ -58,7 +61,9 @@ const authSlice = createSlice({
       })
       .addCase(registerUser.fulfilled, (state, { payload }) => {
         state.loading = false;
-        state.success = true;
+        state.userInfo = payload;
+        state.userToken = payload?.userToken;
+        state.isAuthenticated = false;
       })
       .addCase(registerUser.rejected, (state, { payload }) => {
         state.loading = false;
@@ -68,5 +73,5 @@ const authSlice = createSlice({
 });
 
 export const { logout, setCredentials } = authSlice.actions;
-export const selectIsLoggedIn = (state) => state.user.userToken !== null;
+export const selectIsLoggedIn = (state) => state.user?.isAuthenticated ?? false;
 export default authSlice.reducer;
