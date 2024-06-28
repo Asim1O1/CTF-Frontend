@@ -2,68 +2,13 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faSearch } from "@fortawesome/free-solid-svg-icons";
 import background from "../assets/background.jpg";
+import Navigation from "../components/navigation";
 
 const Home = () => {
   return (
     <>
       <div className="w-full">
-        <header className="w-full flex justify-between items-center h-16 bg-gray-200 bg-opacity-50 text-black shadow-xl fixed backdrop-blur-3 z-10">
-          <ul className="flex items-center">
-            <li className="ml-20 text-3xl">ING</li>
-          </ul>
-          <ul className="flex ml-32">
-            <a
-              href=""
-              className="mr-20 text-lg hover:bg-yellow-500 hover:text-black hover:shadow-2xl transition-all px-3 py-1 rounded-full"
-            >
-              <li>Home</li>
-            </a>
-            <a
-              href=""
-              className="mr-20 text-lg hover:bg-lime-500 hover:text-black hover:shadow-2xl transition-all px-4 py-1 rounded-full"
-            >
-              <li>CTF</li>
-            </a>
-            <a
-              href=""
-              className="mr-20 text-lg hover:bg-sky-600 hover:text-black hover:shadow-2xl transition-all px-4 py-1 rounded-full"
-            >
-              <li>About Us</li>
-            </a>
-          </ul>
-          <ul className="flex items-center">
-            <li className="ml-4">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="mr-4 px-4 py-2 rounded-full outline-none"
-              />
-            </li>
-            <a href="">
-              <li className="mr-6">
-                <FontAwesomeIcon
-                  icon={faSearch}
-                  className="text-xl hover:scale-125 transition-all"
-                />
-              </li>
-            </a>
-            <a href="">
-              <li className="mr-6 ">
-                <FontAwesomeIcon
-                  icon={faBell}
-                  className="text-xl hover:scale-125 transition-all"
-                />
-              </li>
-            </a>
-
-            <a
-              href=""
-              className="mr-8 text-lg bg-rose-500 hover:scale-105 shadow-2xl transition-all px-3 py-1 rounded-full"
-            >
-              <li>Register</li>
-            </a>
-          </ul>
-        </header>
+        <Navigation />
         <div
           id="hero"
           className="relative w-full h-screen bg-cover bg-center bg-no-repeat shadow-2xl"
@@ -99,11 +44,11 @@ const Home = () => {
               <span className="text-yellow-500">t</span>
               <span className="text-sky-400">e</span>
             </h1>
-             <a href="#carousel">
-            <button className="absolute px-4 py-3 hover:bg-lime-500 transition-all hover:scale-110 shadow-xl bg-gray-200  bg-opacity-50 backdrop-blur-xl rounded-3xl text-2xl">
-              Learn More
-            </button>
-              </a> 
+            <a href="#carousel">
+              <button className="absolute px-4 py-3 hover:bg-lime-500 transition-all hover:scale-110 shadow-xl bg-gray-200  bg-opacity-50 backdrop-blur-xl rounded-3xl text-2xl">
+                Learn More
+              </button>
+            </a>
           </div>
 
           {/* Leaderboard Section */}

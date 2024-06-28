@@ -1,47 +1,139 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-const Header = () => {
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBell,
+  faSearch,
+  faBars,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <header className="text-gray-600 body-font">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg>
-          <span className="ml-3 text-xl">ING</span>
-        </a>
-        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-gray-900">  <Link to="/">Home</Link></a>
-          <a className="mr-5 hover:text-gray-900">  <Link to="/about">About</Link></a>
-          <a className="mr-5 hover:text-gray-900">  <Link to="/intro">CTF</Link></a>
-          {/* <a className="mr-5 hover:text-gray-900">Fourth Link</a> */}
-        </nav>
-        <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-        <Link to="/register">Register</Link>
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="w-4 h-4 ml-1"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
+    <header className="w-full flex justify-between items-center h-16 bg-gray-200 bg-opacity-50 text-black shadow-xl fixed backdrop-blur-3 z-10">
+      <div className="flex items-center">
+        <button className="ml-4 lg:hidden" onClick={toggleMenu}>
+          <FontAwesomeIcon
+            icon={isOpen ? faTimes : faBars}
+            className="text-2xl"
+          />
         </button>
+        <ul className="hidden lg:flex items-center">
+          <li className="ml-20 text-3xl">ING</li>
+        </ul>
+      </div>
+      <ul className="hidden lg:flex ml-32">
+        <a
+          href="#"
+          className="mr-20 text-lg hover:bg-yellow-500 hover:text-black hover:shadow-2xl transition-all px-3 py-1 rounded-full"
+        >
+          <li>Home</li>
+        </a>
+        <a
+          href="#"
+          className="mr-20 text-lg hover:bg-lime-500 hover:text-black hover:shadow-2xl transition-all px-3 py-1 rounded-full"
+        >
+          <li>CTF</li>
+        </a>
+        <a
+          href="#"
+          className="mr-20 text-lg hover:bg-sky-600 hover:text-black hover:shadow-2xl transition-all px-3 py-1 rounded-full"
+        >
+          <li>About Us</li>
+        </a>
+      </ul>
+      <ul className="hidden lg:flex items-center">
+        <li className="ml-4">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="mr-4 px-3 py-1 rounded-full outline-none"
+          />
+        </li>
+        <a href="#">
+          <li className="mr-6">
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="text-xl hover:scale-125 transition-all"
+            />
+          </li>
+        </a>
+        <a href="#">
+          <li className="mr-6">
+            <FontAwesomeIcon
+              icon={faBell}
+              className="text-xl hover:scale-125 transition-all"
+            />
+          </li>
+        </a>
+        <a
+          href="#"
+          className="mr-8 text-lg bg-rose-500 hover:scale-105 shadow-2xl transition-all px-3 py-1 rounded-full"
+        >
+          <li>Register</li>
+        </a>
+      </ul>
+      <div
+        className={`lg:hidden fixed top-16 left-0 w-full bg-gray-200 bg-opacity-50 backdrop-blur-lg transition-transform duration-300 ${
+          isOpen ? "transform translate-x-0" : "transform -translate-x-full"
+        }`}
+      >
+        <ul className="flex flex-col items-start ml-3 py-4">
+          <a
+            href="#"
+            className="my-2 text-lg hover:bg-yellow-500 hover:text-black hover:shadow-2xl transition-all px-3 py-1 rounded-full"
+            onClick={toggleMenu}
+          >
+            <li>Home</li>
+          </a>
+          <a
+            href="#"
+            className="my-2 text-lg hover:bg-lime-500 hover:text-black hover:shadow-2xl transition-all px-3 py-1 rounded-full"
+            onClick={toggleMenu}
+          >
+            <li>CTF</li>
+          </a>
+          <a
+            href="#"
+            className="my-2 text-lg hover:bg-sky-600 hover:text-black hover:shadow-2xl transition-all px-3 py-1 rounded-full"
+            onClick={toggleMenu}
+          >
+            <li>About Us</li>
+          </a>
+          <div className="flex flex-col items-start ml-2">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="my-2 px-3 py-1 rounded-full outline-none"
+            />
+            <a href="#">
+              <FontAwesomeIcon
+                icon={faSearch}
+                className="hidden text-xl my-2 hover:scale-125 transition-all"
+              />
+            </a>
+            <a href="#">
+              <FontAwesomeIcon
+                icon={faBell}
+                className="hidden text-xl my-2 hover:scale-125 transition-all"
+              />
+            </a>
+            <a
+              href="#"
+              className="my-2 text-lg bg-rose-500 hover:scale-105 shadow-2xl transition-all px-3 py-1 rounded-full"
+            >
+              Register
+            </a>
+          </div>
+        </ul>
       </div>
     </header>
   );
 };
 
-export default Header;
+export default Navbar;
