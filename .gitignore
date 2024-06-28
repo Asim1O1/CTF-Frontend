@@ -13,6 +13,7 @@ node_modules
 
 # Lockfiles
 package-lock.json
+yarn-lock.json
 
 # Build outputs
 package-lock.json
