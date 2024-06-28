@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UserLogin from "./components/login";
 import UserRegister from "./components/register";
-import Home from "./pages/HomePage";
+// import Home from "./pages/HomePage";
 import Intro from "./components/intro";
 import Topic from "./components/topic";
 import Scenario from "./components/scenario";
@@ -17,7 +17,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/Admin" element={<Admin />} />
 
           <Route path="/register" element={<UserRegister />} />

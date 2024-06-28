@@ -7,7 +7,7 @@ import Header from './navbar';
 
 const topics = [
   { id: 1, title: 'Introduction to Cyber Security', image: img1, description: 'Introduction: Enumeration is the ordered listing of all items in a collection, often used in math and computer science.' },
-  { id: 2, title: 'Ethical Hacking – Using ViewDNS ', image: img1, description: 'Introduction to Malware Analysis.' },
+  { id: 2, title: 'Ethical Hacking – Using ViewDNS ', image: img1, description: 'Introduction to Malware Analysis.ViewDNS offers a variety of DNS and network tools such as Reverse IP Lookup, DNS Record Lookup, and Whois Lookup.' },
   { id: 3, title: 'Scanning Network Using Censys.io ', image: img1, description: 'Introduction to Network Security.' },
   { id: 4, title: 'Ethical Hacking - Using WhatWeb', image: img1, description: 'Introduction to Web Security.' },
   { id: 5, title: 'Digital Forensic Steganography', image: img1, description: 'Introduction to Incident Response.' },
@@ -33,7 +33,7 @@ const Topic = () => {
   return (
     <>
       <Header/>
-    <div className="flex w-full min-h-screen bg-gray-500 ">
+    <div className="flex w-full min-h-screen bg-gray-700 ">
       {/* Sidebar Navigation */}
       <nav className="w-1/6 bg-gray-800 text-white font-size-15 p-4 min-h-screen bg-gray-500">
         <h2 className="text-2xl font-bold mb-10">Dive Into Challenges..</h2>
