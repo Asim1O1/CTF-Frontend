@@ -1,9 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import img1 from "../assets/img1.jpeg";
-import Home from "../pages/HomePage";
-//import NavBar from 'NavBar';
-
+import NavBar from "./navbar";
 
 const topics = [
   {
@@ -37,7 +35,7 @@ const Intro = () => {
 
   return (
     <>
-      <Home />
+      <NavBar />
       <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-500 to-gray-900 text-black">
         <div className="max-w-2xl w-full p-2 bg-white rounded-lg shadow-lg">
           <img
