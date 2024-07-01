@@ -4,6 +4,8 @@ import greenFlagImage from "../assets/greenflag.png";
 import redFlagImage from "../assets/redflag.png";
 import Confetti from "react-confetti";
 import Home from "../pages/HomePage";
+//import NavBar from 'NavBar';
+
 
 function CtfDetail() {
   const [answer1, setAnswer1] = useState("");
