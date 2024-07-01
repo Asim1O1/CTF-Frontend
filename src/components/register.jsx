@@ -1,19 +1,21 @@
+import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../redux/authAction";
 import logo from "../assets/hacker.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert2";
-import Select from "react-select";
-import { getData } from "country-list";
+// import Select from "react-select";
+// import { getData } from "country-list";
 
 const UserRegister = () => {
   const [formData, setFormData] = useState({
     fullname: "",
     username: "",
+    country: "",
     email: "",
     password: "",
-    country: "", // Add country to formData
+
   });
   const [loading, setLoading] = useState(false);
 
@@ -28,12 +30,12 @@ const UserRegister = () => {
     }));
   };
 
-  const handleSelectChange = (selectedOption) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      country: selectedOption.value,
-    }));
-  };
+  // const handleSelectChange = (selectedOption) => {
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     country: selectedOption.value,
+  //   }));
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,15 +47,14 @@ const UserRegister = () => {
         title: "Registration Successful",
         text: "You have successfully registered!",
       });
-      setTimeout(()=>
-      {
+      setTimeout(() => {
         navigate("/login");
-      }, 3000)
-
+      }, 3000);
     } catch (err) {
+      console.log("error occured in register page", err);
       swal.fire({
         icon: "error",
-        title: "Registration Failed",
+        title: "Registration Failedd",
         text: err,
       });
     } finally {
@@ -61,10 +62,10 @@ const UserRegister = () => {
     }
   };
 
-  const countries = getData().map((country) => ({
-    value: country.code,
-    label: country.name,
-  }));
+  // const countries = getData().map((country) => ({
+  //   value: country.code,
+  //   label: country.name,
+  // }));
 
   return (
     <div className="flex">
@@ -115,6 +116,22 @@ const UserRegister = () => {
             />
           </div>
           <div>
+            <p className="text-left text-white">country:</p>
+            <label htmlFor="country" className="sr-only">
+              Country
+            </label>
+            <input
+              id="country"
+              name="country"
+              type="text"
+              autoComplete="country"
+              required
+              className="bg-white appearance-none rounded-md relative block w-full h-9 px-3 py-2 border-3 border-gray-300 text-gray-900"
+              value={formData.country}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
             <p className="text-left text-white">Email:</p>
             <label htmlFor="email-address" className="sr-only">
               Email address
@@ -146,6 +163,7 @@ const UserRegister = () => {
               onChange={handleChange}
             />
           </div>
+
           <div className="flex">
             <button
               type="submit"

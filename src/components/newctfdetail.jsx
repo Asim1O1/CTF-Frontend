@@ -27,9 +27,9 @@ function CtfDetail() {
     };
 
     updateWindowDimensions();
-    window.addEventListener('resize', updateWindowDimensions);
+    window.addEventListener("resize", updateWindowDimensions);
 
-    return () => window.removeEventListener('resize', updateWindowDimensions);
+    return () => window.removeEventListener("resize", updateWindowDimensions);
   }, []);
 
   useEffect(() => {
@@ -88,15 +88,19 @@ function CtfDetail() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url(${img})`,
-            backgroundColor: 'rgba(0,0,0,0.5)', // Adjust opacity as needed
+            backgroundColor: "rgba(0,0,0,0.5)", // Adjust opacity as needed
           }}
         >
           <div className="absolute inset-0 bg-black opacity-75"></div>
         </div>
         {/* Content Container */}
         <div className="relative z-10 flex flex-col justify-center items-center h-full text-white">
-          <h1 className="text-4xl font-bold mb-4 mt-10">Network Scanning (Shodan)</h1>
-          <p className="text-lg mb-8">Explore the details of this Capture The Flag event.</p>
+          <h1 className="text-4xl font-bold mb-4 mt-10">
+            Network Scanning (Shodan)
+          </h1>
+          <p className="text-lg mb-8">
+            Explore the details of this Capture The Flag event.
+          </p>
           <a
             href="topic"
             className=" mb-10 px-4 py-2 bg-white text-gray-800 font-semibold rounded hover:bg-gray-300 transition duration-300"
@@ -118,7 +122,10 @@ function CtfDetail() {
                 placeholder="Answer format: **,***"
                 className="p-2 border border-gray-300 rounded-lg flex-grow focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <button type="submit" className="p-2 rounded-lg bg-green-500 text-white hover:bg-green-600 transition duration-300">
+              <button
+                type="submit"
+                className="p-2 rounded-lg bg-green-500 text-white hover:bg-green-600 transition duration-300"
+              >
                 Submit
               </button>
             </form>
@@ -146,7 +153,10 @@ function CtfDetail() {
                 placeholder="Answer format: ****** ***"
                 className="p-2 border border-gray-300 rounded-lg flex-grow focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <button type="submit" className="p-2 rounded-lg bg-green-500 text-white hover:bg-green-600 transition duration-300">
+              <button
+                type="submit"
+                className="p-2 rounded-lg bg-green-500 text-white hover:bg-green-600 transition duration-300"
+              >
                 Submit
               </button>
             </form>

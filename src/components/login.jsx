@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -34,11 +35,9 @@ const LoginUser = () => {
         text: "You have successfully logged in!",
       });
 
-      setTimeout(()=>
-      {
+      setTimeout(() => {
         navigate("/");
-      }, 3000)
-
+      }, 3000);
     } catch (err) {
       swal.fire({
         icon: "error",
