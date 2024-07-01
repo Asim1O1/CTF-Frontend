@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import img1 from "../assets/img1.jpeg";
-import Header from "./navbar";
+import NavBar from "./NavBar";
 
 const topics = [
   {
@@ -41,76 +41,39 @@ const topics = [
     image: img1,
     description: "Introduction to Threat Intelligence.",
   },
-  {
-    id: 1,
+  { 
+    id: 7,
     title: "Scanning Network",
     image: img1,
     description:
       "Introduction: Enumeration is the ordered listing of all items in a collection, often used in math and computer science.",
   },
   {
-    id: 2,
+    id: 8,
     title: "Ethical Hacking – Using ViewDNS ",
     image: img1,
     description: "Introduction to Malware Analysis.",
   },
   {
-    id: 3,
+    id: 9,
     title: "Scanning Network Using Censys.io ",
     image: img1,
     description: "Introduction to Network Security.",
   },
   {
-    id: 4,
+    id: 10,
     title: "Ethical Hacking - Using WhatWeb",
     image: img1,
     description: "Introduction to Web Security.",
   },
   {
-    id: 5,
+    id: 11,
     title: "Digital Forensic Steganography",
     image: img1,
     description: "Introduction to Incident Response.",
   },
   {
-    id: 6,
-    title: "Footprinting Using Have I Been Pwned ",
-    image: img1,
-    description: "Introduction to Threat Intelligence.",
-  },
-  {
-    id: 1,
-    title: "Scanning Network",
-    image: img1,
-    description:
-      "Introduction: Enumeration is the ordered listing of all items in a collection, often used in math and computer science.",
-  },
-  {
-    id: 2,
-    title: "Ethical Hacking – Using ViewDNS ",
-    image: img1,
-    description: "Introduction to Malware Analysis.",
-  },
-  {
-    id: 3,
-    title: "Scanning Network Using Censys.io ",
-    image: img1,
-    description: "Introduction to Network Security.",
-  },
-  {
-    id: 4,
-    title: "Ethical Hacking - Using WhatWeb",
-    image: img1,
-    description: "Introduction to Web Security.",
-  },
-  {
-    id: 5,
-    title: "Digital Forensic Steganography",
-    image: img1,
-    description: "Introduction to Incident Response.",
-  },
-  {
-    id: 6,
+    id: 12,
     title: "Footprinting Using Have I Been Pwned ",
     image: img1,
     description: "Introduction to Threat Intelligence.",
@@ -122,15 +85,15 @@ const Topic = () => {
 
   return (
     <>
-      <Header />
+      <NavBar />
       <div className="flex w-full min-h-screen bg-gray-500 ">
         {/* Sidebar Navigation */}
-        <nav className="w-1/6 bg-gray-800 text-white font-size-15 p-4 min-h-screen bg-gray-500">
+        <nav className="w-1/6 bg-gray-800  text-white font-size-15 p-4 min-h-screen bg-gray-500 transform transition-transform duration-300 hover:-translate-x-0 hover:translate-x-2">
           <h2 className="text-2xl font-bold mb-10">Dive Into Challenges..</h2>
           <ul>
             <li className="mb-5">
               <button
-                className="w-full text-left px-4 py-2 bg-blue-600 rounded hover:bg-blue-700"
+                className="w-full text-left px-4 py-2 bg-blue-600 rounded transition-colors duration-300 hover:bg-blue-700"
                 onClick={() => navigate("/learn")}
               >
                 Quiz Hour
@@ -138,15 +101,15 @@ const Topic = () => {
             </li>
             <li className="mb-5">
               <button
-                className="w-full text-left px-4 py-2 bg-green-600 rounded hover:bg-green-700"
-                onClick={() => navigate("/play")}
+                className="w-full text-left px-4 py-2 bg-green-600 rounded transition-colors duration-300 hover:bg-green-700"
+                onClick={() => navigate("./newctfdetail")}
               >
                 Check Rank
               </button>
             </li>
             <li className="mb-5">
               <button
-                className="w-full text-left px-4 py-2 bg-yellow-600 rounded hover:bg-yellow-700"
+                className="w-full text-left px-4 py-2 bg-yellow-600 rounded transition-colors duration-300 hover:bg-yellow-700"
                 onClick={() => navigate("/practice")}
               >
                 History
@@ -154,7 +117,7 @@ const Topic = () => {
             </li>
             <li className="mb-5">
               <button
-                className="w-full text-left px-4 py-2 bg-purple-600 rounded hover:bg-purple-700"
+                className="w-full text-left px-4 py-2 bg-purple-600 rounded transition-colors duration-300 hover:bg-purple-700"
                 onClick={() => navigate("/practice")}
               >
                 Hint
@@ -164,7 +127,7 @@ const Topic = () => {
         </nav>
 
         {/* Main Content */}
-        <div className="flex-grow p-12">
+        <div className="flex-grow p-12 animate-slide-in">
           {/* Hero Section */}
           <div className="bg-gray-200 p-10 mb-6 rounded-lg shadow-lg text-center">
             <h1 className="text-4xl font-bold text-gray-800">
@@ -180,7 +143,7 @@ const Topic = () => {
             {topics.map((topic) => (
               <div
                 key={topic.id}
-                className="relative bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl duration-300"
               >
                 <img
                   src={topic.image}
